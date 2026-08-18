@@ -1,71 +1,45 @@
 # AI Agent Skills 集合
 
-本仓库以 **skill** 为根目录，收纳可直接被 AI Agent（Proma / 类 Claude 智能体）加载使用的多个 **Skill**。每个 skill 独立一个子目录，均有自己的 `SKILL.md` 作为入口。
+这里收集了一系列**给 AI 助手用的技能包**。每个技能包教会 AI 做一类事情，你不需要懂任何技术，只要用大白话把你的需求说给 AI，它就能帮你完成。
 
-## 已收录 Skill
+## 已收录技能
 
-| Skill | 说明 |
+| 技能 | 能帮你做什么 |
 |---|---|
-| [handdrawn-svg](handdrawn-svg/SKILL.md) | 手绘风 SVG 生成器：把结构化框图变成「像用马克笔在网格纸上手绘」的矢量图 |
+| [handdrawn-svg](handdrawn-svg/SKILL.md) | 把结构图、流程图、思维导图等画成「像用马克笔在纸上手绘」的示意图 |
 
-后续新增 skill 时，直接在根目录下新建子目录并补充对应的 `SKILL.md` 即可。
+以后会不断有新技能加入，直接新增在根目录下即可。
 
 ---
 
-## handdrawn-svg · 手绘风 SVG 生成器
+## handdrawn-svg · 手绘风示意图生成
 
-把结构化的框图（架构图 / 流程图 / 思维导图 / 系统图等）变成「像用马克笔在网格纸上手绘」的 SVG 矢量图。
+### 这是什么
 
-### 特性
+用 AI 帮你画示意图，但画出来不是死板的工程图，而是**像手绘笔记一样自然随性**的风格——线条有点抖、字体像手写、背景像网格纸，充满手账感。适合放进笔记、课件、汇报材料里，让内容看起来更亲切、更有温度。
 
-- **手绘质感三件套**：笔迹抖动滤镜（`feTurbulence` + `feDisplacementMap`）、手写字体（ZCOOL KuaiLe / Liu Jian Mao Cao，离线回退楷体与 Comic Sans）、米黄网格纸点阵背景。
-- **双描边叠线**：用两个不同 seed 的抖动滤镜给大容器描两遍边，形成马克笔「画了两笔」的错位叠线效果。
-- **铅笔排线**：每层容器叠加同色系低透明度排线 pattern，增强手账质感。
-- **手绘箭头与曲线连接**：不规则三角形箭头 + 轻微 S 形曲线，配合虚线区分返回/辅助路径。
-- **马克笔低饱和色板**：预置 7 层配色（用户/编排/LLM/工具/记忆/知识/安全），中文主 + 英文副双语文案排版。
-- **可选 PNG 预览**：`scripts/render_preview.py` 一键渲染，cairosvg 缺失时自动创建临时 venv 安装，不污染全局环境。
+### 它能画出什么
 
-### 使用方式
+架构图、流程图、思维导图、系统结构图……只要你能用话描述清楚里面有哪些内容、彼此怎么连接，它就能画。
 
-本 Skill 面向 AI Agent。当用户表达手绘/涂鸦/马克笔/Sketch 风格制图需求，或要求把已有 SVG 框图重绘成手绘风时，加载 `handdrawn-svg/SKILL.md` 即可获得完整生成流程。
+下面这张就是它画出来的效果示例：
 
-#### 工作流概览
+![手绘风智能体架构图示例](handdrawn-svg/assets/example_agent_architecture.svg)
 
-1. 解析用户需求，确定图类型、分层结构与文案。
-2. 布局（画布建议 1100×960），可参照 `handdrawn-svg/assets/example_agent_architecture.svg` 排版。
-3. 按 `handdrawn-svg/references/sketch_recipe.md` 配方生成 SVG（滤镜 / 双描边 / 排线 / 手绘箭头 / 色板均有精确参数）。
-4. 用 XML 解析校验文件合法性。
-5. （可选）渲染 PNG 预览后交付。
+### 怎么用
 
-```bash
-# XML 校验
-python3 -c "import xml.etree.ElementTree as ET; ET.parse('输出.svg'); print('OK')"
+1. 打开支持加载技能包的 AI 助手；
+2. 让它加载 `handdrawn-svg` 这个技能；
+3. 用自然语言描述你想要的图，例如：
+   - 「帮我画一张我的个人博客系统架构图，手绘风格」
+   - 「画个流程图：用户登录 → 验证 → 进入首页，写得随意一点、像手账」
+   - 「把这张图重画成手绘风」
 
-# 渲染 PNG 预览（自动处理 cairosvg 缺失）
-python3 handdrawn-svg/scripts/render_preview.py 输出.svg
-```
+### 小提示
 
-#### 目录结构
-
-```
-skill/                              # 仓库根目录
-├── README.md                       # 本文件
-├── .gitignore
-└── handdrawn-svg/
-    ├── SKILL.md                    # Skill 入口：触发条件、工作流、关键规则
-    ├── references/
-    │   └── sketch_recipe.md        # 完整配方：滤镜参数、色板、手绘箭头、避坑清单
-    ├── assets/
-    │   └── example_agent_architecture.svg  # 最终版示例（智能体架构图）
-    └── scripts/
-        └── render_preview.py       # PNG 预览渲染脚本
-```
-
-#### 示例
-
-`handdrawn-svg/assets/example_agent_architecture.svg` 是一张智能体架构图示例，展示了完整的排版结构、配色与叠线效果，可照此结构修改坐标与文案生成新图。
-
-> 注：cairosvg 渲染的 PNG 预览图会使用回退字体，最终效果以浏览器打开 SVG 为准。
+- 把**结构说清楚**（有哪些模块、谁连谁）画出来就越接近你想要的样子；
+- 如果对布局、颜色有偏好，也可以直接提，例如「从上到下分三层」；
+- 生成的是矢量图（.svg），可以无损放大，放大多少都清晰。
 
 ## 许可
 
