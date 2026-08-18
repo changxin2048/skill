@@ -1,0 +1,14 @@
+# Python 临时 venv（render_preview.py 自动创建）
+.svgcheck-venv/
+
+# 生成的 PNG 预览图
+*_预览.png
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
