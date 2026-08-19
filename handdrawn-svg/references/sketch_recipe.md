@@ -27,8 +27,18 @@
 
 ## 1. 文件骨架
 
+### 1.1 画布宽高比选择（先常用比例，再自适应）
+
+- 用户指定宽高或宽高比 → 直接采用，无需自选。
+- 未指定时按图的形态**优先匹配常用宽高比**：
+  - **16:9**（1600×900）/ **3:2**（1500×1000）：横向分层流程、架构图、左右分栏等"宽于高"的图。
+  - **2:3**（1000×1500）/ **9:16**（900×1600）：纵向长流程、时间线、步骤多的"高于宽"的图。
+  - **4:3**（1200×900）：结构较方正、模块均衡的图。
+- 常用比例放不下（模块过多、布局极窄/极长等）才用**自适应比例与布局**：按内容反推宽高（整数），如 1100×960。
+- 铁律：背景 rect 用 `width="100%" height="100%"` 覆盖全画布；`viewBox` 尺寸 = 全部坐标的范围；选定比例后**所有坐标按该画布重算**，禁止照搬其他尺寸示例的坐标。
+
 ```xml
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="960" viewBox="0 0 1100 960">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&amp;family=Liu+Jian+Mao+Cao&amp;display=swap');
     .text { font-family: 'ZCOOL KuaiLe','Liu Jian Mao Cao','Kaiti SC','STKaiti','KaiTi','Comic Sans MS','Bradley Hand',cursive; }
@@ -87,8 +97,8 @@
 <pattern id="paperDots" width="22" height="22" patternUnits="userSpaceOnUse">
   <circle cx="3" cy="3" r="1.3" fill="#cbbfa9" opacity="0.5"/>
 </pattern>
-<rect width="1100" height="960" fill="<!-- 选定的纸色 -->"/>
-<rect width="1100" height="960" fill="url(#paperDots)"/>
+<rect width="100%" height="100%" fill="<!-- 选定的纸色 -->"/>
+<rect width="100%" height="100%" fill="url(#paperDots)"/>
 ```
 
 **点阵随机**：`width/height` 取 16~28，`r` 取 1.0~1.6，`opacity` 取 0.35~0.65。
@@ -335,6 +345,7 @@
 11. **连接线不套滤镜**：流程线/连接线/箭头/编号圆圈单独成组，置于所有滤镜组之外（滤镜只作用于矩形与涂鸦）；套了滤镜的线条会随图形一起抖，违背"线条清晰"的要求。画完自查：连接线组内不应出现 `filter=` 属性。
 12. **弯折处不用生硬直角**：所有 L 形 90° 转弯用 Q 曲线圆角过渡（半径 3~6px）；T 形汇入点可直连。逐条检查路径里的 `L` 拐角，有直角就换成 `Q`。
 13. **小块宽度必须随文本定**：先算文本宽再加左右 padding（10~14px），禁止"文本短、图形长"（如 2 个字塞进 200px 宽块）。同排并列块统一取组内最宽文本的宽度，同一行内宽度一致；单行块宽上限约 180px，超长文本分行。详见第 9.1 节。
+14. **画布比例与背景必须一致**：选定宽高比后，背景 rect 用 `width="100%" height="100%"`；`viewBox` 与全部坐标必须按所选画布重算，禁止沿用旧示例的 1100×960 坐标（见 1.1）。
 
 ## 12. 校验与随机性自检
 
