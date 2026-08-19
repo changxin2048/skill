@@ -1,0 +1,289 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="960" viewBox="0 0 1100 960">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&amp;family=Liu+Jian+Mao+Cao&amp;display=swap');
+    .text { font-family: 'ZCOOL KuaiLe','Liu Jian Mao Cao','Kaiti SC','STKaiti','KaiTi','Comic Sans MS','Bradley Hand',cursive; }
+    .shapes { stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+  <!-- 本次随机参数：色系=马卡龙（粉嫩）；纸色=奶油#FBF7EC 点阵#E3D5B0/22px/0.5；
+       CEO=柠檬黄 / 高管=天空蓝 / 技术部=薄荷绿 / 产品部=淡紫 / 市场部=蜜桃 / 运营部=淡青 / 职能部门=樱花粉（相邻不撞色）；
+       seedA=41 scaleA=3.0 freqA=0.06；seedB=88 scaleB=3.6 freqB=0.055；
+       排线=45/60/30/15/45/75/60° 透明度0.10~0.16；箭头主色=玫红#D9738A；
+       虚线="6,5" 灰#94a3b8（跨部门协同）；装饰=四角星+螺旋+太阳+圆点×2；
+       编号=实心玫红圆+白字 1-5 = 部门编号（图例右下）；
+       圆角=容器rx12 小块rx7；大容器双描边（叠线），小块单描边 -->
+  <defs>
+    <!-- 抖动滤镜 A（形状主抖动） -->
+    <filter id="sketchA" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" seed="41" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.0" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <!-- 抖动滤镜 B（第二遍描边，seed 不同，与 A 错开形成叠线） -->
+    <filter id="sketchB" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.055" numOctaves="3" seed="88" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <!-- 纸张点阵 -->
+    <pattern id="paperDots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.3" fill="#E3D5B0" opacity="0.5"/>
+    </pattern>
+    <!-- 各层铅笔排线 pattern -->
+    <pattern id="hatchCeo" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#D9AE4E" stroke-width="1.1" opacity="0.14"/>
+    </pattern>
+    <pattern id="hatchExec" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(60)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#6E9ECB" stroke-width="0.9" opacity="0.15"/>
+    </pattern>
+    <pattern id="hatchTech" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#6FB39B" stroke-width="1.0" opacity="0.12"/>
+    </pattern>
+    <pattern id="hatchProd" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(15)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#9678C0" stroke-width="0.9" opacity="0.14"/>
+    </pattern>
+    <pattern id="hatchMkt" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#DB9066" stroke-width="1.2" opacity="0.10"/>
+    </pattern>
+    <pattern id="hatchOps" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(75)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#6EB5B4" stroke-width="1.0" opacity="0.16"/>
+    </pattern>
+    <pattern id="hatchFn" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(60)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#D9738A" stroke-width="0.9" opacity="0.13"/>
+    </pattern>
+  </defs>
+
+  <!-- 纸张背景 -->
+  <rect width="1100" height="960" fill="#FBF7EC"/>
+  <rect width="1100" height="960" fill="url(#paperDots)"/>
+
+  <!-- ============ 形状组（sketchA：矩形/小块/排线/涂鸦，不含连接线） ============ -->
+  <g filter="url(#sketchA)" class="shapes">
+    <!-- CEO 容器：柠檬黄 -->
+    <rect x="445" y="86" width="210" height="56" rx="14" fill="#FEF7E4"/>
+    <rect x="445" y="86" width="210" height="56" rx="14" fill="url(#hatchCeo)"/>
+    <rect x="445" y="86" width="210" height="56" rx="14" fill="none" stroke="#F4D58C" stroke-width="2.8"/>
+    <!-- 高管层（5 个 C 字头）：天空蓝 -->
+    <rect x="59" y="182" width="150" height="52" rx="10" fill="#ECF4FB"/>
+    <rect x="59" y="182" width="150" height="52" rx="10" fill="url(#hatchExec)"/>
+    <rect x="59" y="182" width="150" height="52" rx="10" fill="none" stroke="#A9CBE8" stroke-width="2.6"/>
+    <rect x="271" y="182" width="150" height="52" rx="10" fill="#ECF4FB"/>
+    <rect x="271" y="182" width="150" height="52" rx="10" fill="url(#hatchExec)"/>
+    <rect x="271" y="182" width="150" height="52" rx="10" fill="none" stroke="#A9CBE8" stroke-width="2.6"/>
+    <rect x="483" y="182" width="150" height="52" rx="10" fill="#ECF4FB"/>
+    <rect x="483" y="182" width="150" height="52" rx="10" fill="url(#hatchExec)"/>
+    <rect x="483" y="182" width="150" height="52" rx="10" fill="none" stroke="#A9CBE8" stroke-width="2.6"/>
+    <rect x="695" y="182" width="150" height="52" rx="10" fill="#ECF4FB"/>
+    <rect x="695" y="182" width="150" height="52" rx="10" fill="url(#hatchExec)"/>
+    <rect x="695" y="182" width="150" height="52" rx="10" fill="none" stroke="#A9CBE8" stroke-width="2.6"/>
+    <rect x="907" y="182" width="150" height="52" rx="10" fill="#ECF4FB"/>
+    <rect x="907" y="182" width="150" height="52" rx="10" fill="url(#hatchExec)"/>
+    <rect x="907" y="182" width="150" height="52" rx="10" fill="none" stroke="#A9CBE8" stroke-width="2.6"/>
+    <!-- 部门容器 x: 36/248/460/672/884，w196 h270，y300 -->
+    <!-- 技术部：薄荷绿 -->
+    <rect x="36" y="300" width="196" height="270" rx="12" fill="#EBF7F2"/>
+    <rect x="36" y="300" width="196" height="270" rx="12" fill="url(#hatchTech)"/>
+    <rect x="36" y="300" width="196" height="270" rx="12" fill="none" stroke="#A8D8C5" stroke-width="2.8"/>
+    <!-- 产品部：淡紫 -->
+    <rect x="248" y="300" width="196" height="270" rx="12" fill="#F4EFFA"/>
+    <rect x="248" y="300" width="196" height="270" rx="12" fill="url(#hatchProd)"/>
+    <rect x="248" y="300" width="196" height="270" rx="12" fill="none" stroke="#C7B4E3" stroke-width="2.8"/>
+    <!-- 市场部：蜜桃 -->
+    <rect x="460" y="300" width="196" height="270" rx="12" fill="#FEF1E8"/>
+    <rect x="460" y="300" width="196" height="270" rx="12" fill="url(#hatchMkt)"/>
+    <rect x="460" y="300" width="196" height="270" rx="12" fill="none" stroke="#F5C3A8" stroke-width="2.8"/>
+    <!-- 运营部：淡青 -->
+    <rect x="672" y="300" width="196" height="270" rx="12" fill="#ECF8F7"/>
+    <rect x="672" y="300" width="196" height="270" rx="12" fill="url(#hatchOps)"/>
+    <rect x="672" y="300" width="196" height="270" rx="12" fill="none" stroke="#A5DCDB" stroke-width="2.8"/>
+    <!-- 职能部门：樱花粉 -->
+    <rect x="884" y="300" width="196" height="270" rx="12" fill="#FDECEF"/>
+    <rect x="884" y="300" width="196" height="270" rx="12" fill="url(#hatchFn)"/>
+    <rect x="884" y="300" width="196" height="270" rx="12" fill="none" stroke="#F2A9B8" stroke-width="2.8"/>
+    <!-- 技术部小块 2×2（行1 y352 行2 y420，78×56） -->
+    <rect x="52" y="352" width="78" height="56" rx="7" fill="#fffdf7" stroke="#CEEADF" stroke-width="2.2"/>
+    <rect x="138" y="352" width="78" height="56" rx="7" fill="#fffdf7" stroke="#CEEADF" stroke-width="2.2"/>
+    <rect x="52" y="420" width="78" height="56" rx="7" fill="#fffdf7" stroke="#CEEADF" stroke-width="2.2"/>
+    <rect x="138" y="420" width="78" height="56" rx="7" fill="#fffdf7" stroke="#CEEADF" stroke-width="2.2"/>
+    <!-- 产品部小块（行1 两块，行2 居中一块） -->
+    <rect x="264" y="352" width="78" height="56" rx="7" fill="#fffdf7" stroke="#E2D7F1" stroke-width="2.2"/>
+    <rect x="350" y="352" width="78" height="56" rx="7" fill="#fffdf7" stroke="#E2D7F1" stroke-width="2.2"/>
+    <rect x="307" y="420" width="78" height="56" rx="7" fill="#fffdf7" stroke="#E2D7F1" stroke-width="2.2"/>
+    <!-- 市场部小块 -->
+    <rect x="476" y="352" width="78" height="56" rx="7" fill="#fffdf7" stroke="#FAE0CE" stroke-width="2.2"/>
+    <rect x="562" y="352" width="78" height="56" rx="7" fill="#fffdf7" stroke="#FAE0CE" stroke-width="2.2"/>
+    <rect x="519" y="420" width="78" height="56" rx="7" fill="#fffdf7" stroke="#FAE0CE" stroke-width="2.2"/>
+    <!-- 运营部小块 -->
+    <rect x="688" y="352" width="78" height="56" rx="7" fill="#fffdf7" stroke="#D1EEED" stroke-width="2.2"/>
+    <rect x="774" y="352" width="78" height="56" rx="7" fill="#fffdf7" stroke="#D1EEED" stroke-width="2.2"/>
+    <rect x="731" y="420" width="78" height="56" rx="7" fill="#fffdf7" stroke="#D1EEED" stroke-width="2.2"/>
+    <!-- 职能部门小块 -->
+    <rect x="900" y="352" width="78" height="56" rx="7" fill="#fffdf7" stroke="#F8CDD5" stroke-width="2.2"/>
+    <rect x="986" y="352" width="78" height="56" rx="7" fill="#fffdf7" stroke="#F8CDD5" stroke-width="2.2"/>
+    <rect x="943" y="420" width="78" height="56" rx="7" fill="#fffdf7" stroke="#F8CDD5" stroke-width="2.2"/>
+    <!-- 图例容器 -->
+    <rect x="340" y="596" width="420" height="56" rx="14" fill="#fffdf7"/>
+    <rect x="340" y="596" width="420" height="56" rx="14" fill="none" stroke="#B8A58E" stroke-width="2.5"/>
+    <!-- 涂鸦装饰：四角星 / 螺旋 / 太阳 / 圆点 -->
+    <path d="M0,-12 C1,-3 3,-1 12,0 C3,1 1,3 0,12 C-1,3 -3,1 -12,0 C-3,-1 -1,-3 0,-12 Z"
+          transform="translate(140,105) scale(1.15)" fill="#f472b6" opacity="0.85"/>
+    <path d="M960,95 m0,0 c4,-6 12,-4 13,2 c1,6 -6,9 -11,5 c-4,-3 -4,-9 1,-11 c4,-2 8,1 7,5"
+          transform="translate(25,5)" fill="none" stroke="#a78bfa" stroke-width="2"/>
+    <g transform="translate(120,830)">
+      <circle r="7" fill="#fbbf24"/>
+      <path d="M0,-11 L0,-8 M0,11 L0,8 M-11,0 L-8,0 M11,0 L8,0 M-8,-8 L-6,-6 M8,8 L6,6 M8,-8 L6,-6 M-8,8 L-6,6"
+            stroke="#fbbf24" stroke-width="1.8" fill="none"/>
+    </g>
+    <circle cx="960" cy="780" r="6" fill="#fbbf24" opacity="0.7"/>
+    <circle cx="995" cy="815" r="4" fill="#22d3ee" opacity="0.75"/>
+  </g>
+
+  <!-- ============ 描边组（sketchB：大容器第二遍描边，叠线错开） ============ -->
+  <g filter="url(#sketchB)" class="shapes">
+    <rect x="445" y="86" width="210" height="56" rx="14" fill="none" stroke="#D9AE4E" stroke-width="1.5"/>
+    <rect x="59" y="182" width="150" height="52" rx="10" fill="none" stroke="#6E9ECB" stroke-width="1.3"/>
+    <rect x="271" y="182" width="150" height="52" rx="10" fill="none" stroke="#6E9ECB" stroke-width="1.3"/>
+    <rect x="483" y="182" width="150" height="52" rx="10" fill="none" stroke="#6E9ECB" stroke-width="1.3"/>
+    <rect x="695" y="182" width="150" height="52" rx="10" fill="none" stroke="#6E9ECB" stroke-width="1.3"/>
+    <rect x="907" y="182" width="150" height="52" rx="10" fill="none" stroke="#6E9ECB" stroke-width="1.3"/>
+    <rect x="36" y="300" width="196" height="270" rx="12" fill="none" stroke="#6FB39B" stroke-width="1.5"/>
+    <rect x="248" y="300" width="196" height="270" rx="12" fill="none" stroke="#9678C0" stroke-width="1.5"/>
+    <rect x="460" y="300" width="196" height="270" rx="12" fill="none" stroke="#DB9066" stroke-width="1.5"/>
+    <rect x="672" y="300" width="196" height="270" rx="12" fill="none" stroke="#6EB5B4" stroke-width="1.5"/>
+    <rect x="884" y="300" width="196" height="270" rx="12" fill="none" stroke="#D9738A" stroke-width="1.5"/>
+    <rect x="340" y="596" width="420" height="56" rx="14" fill="none" stroke="#86745E" stroke-width="1.4"/>
+  </g>
+
+  <!-- ============ 连接线组（无滤镜，保持清晰；弯折处圆角） ============ -->
+  <g class="shapes">
+    <!-- CEO → 总线（尾端留 4px 间隙） -->
+    <path d="M550,146 C549,152 551,158 550,164" fill="none" stroke="#D9738A" stroke-width="2.4"/>
+    <path d="M134,164 L982,164" fill="none" stroke="#D9738A" stroke-width="2.4"/>
+    <!-- 总线 → 各高管框顶（箭头尖落边框） -->
+    <path d="M134,164 L134,178" fill="none" stroke="#D9738A" stroke-width="2.4"/>
+    <path d="M346,164 L346,178" fill="none" stroke="#D9738A" stroke-width="2.4"/>
+    <path d="M558,164 L558,178" fill="none" stroke="#D9738A" stroke-width="2.4"/>
+    <path d="M770,164 L770,178" fill="none" stroke="#D9738A" stroke-width="2.4"/>
+    <path d="M982,164 L982,178" fill="none" stroke="#D9738A" stroke-width="2.4"/>
+    <path d="M130,174 L138,175 L134,182 Z" fill="#D9738A"/>
+    <path d="M342,174 L350,175 L346,182 Z" fill="#D9738A"/>
+    <path d="M554,174 L562,175 L558,182 Z" fill="#D9738A"/>
+    <path d="M766,174 L774,175 L770,182 Z" fill="#D9738A"/>
+    <path d="M978,174 L986,175 L982,182 Z" fill="#D9738A"/>
+    <!-- 高管 → 部门容器（轻微 S 曲线，尾端留 4px 间隙） -->
+    <path d="M134,238 C131,258 137,278 134,296" fill="none" stroke="#D9738A" stroke-width="2.4"/>
+    <path d="M346,238 C343,258 349,278 346,296" fill="none" stroke="#D9738A" stroke-width="2.4"/>
+    <path d="M558,238 C555,258 561,278 558,296" fill="none" stroke="#D9738A" stroke-width="2.4"/>
+    <path d="M770,238 C767,258 773,278 770,296" fill="none" stroke="#D9738A" stroke-width="2.4"/>
+    <path d="M982,238 C979,258 985,278 982,296" fill="none" stroke="#D9738A" stroke-width="2.4"/>
+    <path d="M130,292 L138,291 L134,300 Z" fill="#D9738A"/>
+    <path d="M342,292 L350,291 L346,300 Z" fill="#D9738A"/>
+    <path d="M554,292 L562,291 L558,300 Z" fill="#D9738A"/>
+    <path d="M766,292 L774,291 L770,300 Z" fill="#D9738A"/>
+    <path d="M978,292 L986,291 L982,300 Z" fill="#D9738A"/>
+    <!-- 跨部门协同（虚线）：客服支持 → 人力资源 -->
+    <path d="M815,448 C840,440 940,392 986,380" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="6,5"/>
+    <path d="M978,382 L979,377 L986,380 Z" fill="#94a3b8"/>
+    <!-- 部门编号圆（实心玫红 + 白字 1-5） -->
+    <circle cx="214" cy="326" r="11" fill="#D9738A" stroke="#C05F77" stroke-width="1.6"/>
+    <circle cx="426" cy="326" r="11" fill="#D9738A" stroke="#C05F77" stroke-width="1.6"/>
+    <circle cx="638" cy="326" r="11" fill="#D9738A" stroke="#C05F77" stroke-width="1.6"/>
+    <circle cx="850" cy="326" r="11" fill="#D9738A" stroke="#C05F77" stroke-width="1.6"/>
+    <circle cx="1062" cy="326" r="11" fill="#D9738A" stroke="#C05F77" stroke-width="1.6"/>
+    <!-- 图例小样：实线箭头 / 编号圆 / 虚线 -->
+    <path d="M388,620 L416,620" fill="none" stroke="#D9738A" stroke-width="2.4"/>
+    <path d="M414,618 L415,622 L422,620 Z" fill="#D9738A"/>
+    <circle cx="500" cy="620" r="8" fill="#D9738A" stroke="#C05F77" stroke-width="1.4"/>
+    <path d="M606,620 L636,620" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="6,5"/>
+    <!-- 标题波浪下划线 -->
+    <path d="M400,62 C420,56 440,68 460,62 C480,56 500,68 520,62 C540,56 560,68 580,62 C600,56 620,68 640,62 C660,56 680,68 700,62"
+          fill="none" stroke="#D9738A" stroke-width="2.5"/>
+  </g>
+
+  <!-- ============ 文字组（无滤镜） ============ -->
+  <g class="text">
+    <text x="550" y="50" text-anchor="middle" font-size="28" fill="#334155">可可互联网科技 · 组织架构图</text>
+    <text x="550" y="76" text-anchor="middle" font-size="12" fill="#64748b" opacity="0.85">KOKO INTERNET · ORGANIZATION CHART</text>
+    <!-- CEO -->
+    <text x="550" y="110" text-anchor="middle" font-size="15" fill="#334155">首席执行官 · CEO</text>
+    <text x="550" y="125" text-anchor="middle" font-size="9" fill="#64748b">Chief Executive Officer</text>
+    <!-- 高管 -->
+    <text x="134" y="203" text-anchor="middle" font-size="14" fill="#334155">CTO</text>
+    <text x="134" y="219" text-anchor="middle" font-size="11.5" fill="#475569">技术副总裁</text>
+    <text x="134" y="229" text-anchor="middle" font-size="8.5" fill="#94a3b8">Chief Tech. Officer</text>
+    <text x="346" y="203" text-anchor="middle" font-size="14" fill="#334155">CPO</text>
+    <text x="346" y="219" text-anchor="middle" font-size="11.5" fill="#475569">产品副总裁</text>
+    <text x="346" y="229" text-anchor="middle" font-size="8.5" fill="#94a3b8">Chief Product Officer</text>
+    <text x="558" y="203" text-anchor="middle" font-size="14" fill="#334155">CMO</text>
+    <text x="558" y="219" text-anchor="middle" font-size="11.5" fill="#475569">市场副总裁</text>
+    <text x="558" y="229" text-anchor="middle" font-size="8.5" fill="#94a3b8">Chief Marketing Officer</text>
+    <text x="770" y="203" text-anchor="middle" font-size="14" fill="#334155">COO</text>
+    <text x="770" y="219" text-anchor="middle" font-size="11.5" fill="#475569">运营副总裁</text>
+    <text x="770" y="229" text-anchor="middle" font-size="8.5" fill="#94a3b8">Chief Operating Officer</text>
+    <text x="982" y="203" text-anchor="middle" font-size="14" fill="#334155">CFO</text>
+    <text x="982" y="219" text-anchor="middle" font-size="11.5" fill="#475569">财务副总裁</text>
+    <text x="982" y="229" text-anchor="middle" font-size="8.5" fill="#94a3b8">Chief Financial Officer</text>
+    <!-- 部门标签（层标题色 = 该层排线深档） -->
+    <text x="52" y="328" font-size="15.5" fill="#6FB39B">技术部<tspan font-size="10" fill="#64748b"> · R&amp;D</tspan></text>
+    <text x="264" y="328" font-size="15.5" fill="#9678C0">产品部<tspan font-size="10" fill="#64748b"> · Product</tspan></text>
+    <text x="476" y="328" font-size="15.5" fill="#DB9066">市场部<tspan font-size="10" fill="#64748b"> · Marketing</tspan></text>
+    <text x="688" y="328" font-size="15.5" fill="#6EB5B4">运营部<tspan font-size="10" fill="#64748b"> · Operations</tspan></text>
+    <text x="900" y="328" font-size="15.5" fill="#D9738A">职能部门<tspan font-size="10" fill="#64748b"> · Support</tspan></text>
+    <!-- 技术部小块 -->
+    <text x="91" y="376" text-anchor="middle" font-size="12.5" fill="#334155">前端组</text>
+    <text x="91" y="392" text-anchor="middle" font-size="8.5" fill="#64748b">Frontend</text>
+    <text x="177" y="376" text-anchor="middle" font-size="12.5" fill="#334155">后端组</text>
+    <text x="177" y="392" text-anchor="middle" font-size="8.5" fill="#64748b">Backend</text>
+    <text x="91" y="444" text-anchor="middle" font-size="12.5" fill="#334155">算法组</text>
+    <text x="91" y="460" text-anchor="middle" font-size="8.5" fill="#64748b">Algorithm</text>
+    <text x="177" y="444" text-anchor="middle" font-size="12.5" fill="#334155">测试运维</text>
+    <text x="177" y="460" text-anchor="middle" font-size="8.5" fill="#64748b">QA / DevOps</text>
+    <!-- 产品部小块 -->
+    <text x="303" y="376" text-anchor="middle" font-size="12.5" fill="#334155">产品策划</text>
+    <text x="303" y="392" text-anchor="middle" font-size="8.5" fill="#64748b">Product</text>
+    <text x="389" y="376" text-anchor="middle" font-size="12.5" fill="#334155">交互设计</text>
+    <text x="389" y="392" text-anchor="middle" font-size="8.5" fill="#64748b">Interaction</text>
+    <text x="346" y="444" text-anchor="middle" font-size="12.5" fill="#334155">数据分析</text>
+    <text x="346" y="460" text-anchor="middle" font-size="8.5" fill="#64748b">Data Analysis</text>
+    <!-- 市场部小块 -->
+    <text x="515" y="376" text-anchor="middle" font-size="12.5" fill="#334155">品牌公关</text>
+    <text x="515" y="392" text-anchor="middle" font-size="8.5" fill="#64748b">Brand PR</text>
+    <text x="601" y="376" text-anchor="middle" font-size="12.5" fill="#334155">增长营销</text>
+    <text x="601" y="392" text-anchor="middle" font-size="8.5" fill="#64748b">Growth</text>
+    <text x="558" y="444" text-anchor="middle" font-size="12.5" fill="#334155">商务渠道</text>
+    <text x="558" y="460" text-anchor="middle" font-size="8.5" fill="#64748b">BD Channel</text>
+    <!-- 运营部小块 -->
+    <text x="727" y="376" text-anchor="middle" font-size="12.5" fill="#334155">用户运营</text>
+    <text x="727" y="392" text-anchor="middle" font-size="8.5" fill="#64748b">User Ops</text>
+    <text x="813" y="376" text-anchor="middle" font-size="12.5" fill="#334155">内容社区</text>
+    <text x="813" y="392" text-anchor="middle" font-size="8.5" fill="#64748b">Content</text>
+    <text x="770" y="444" text-anchor="middle" font-size="12.5" fill="#334155">客服支持</text>
+    <text x="770" y="460" text-anchor="middle" font-size="8.5" fill="#64748b">Support</text>
+    <!-- 职能部门小块 -->
+    <text x="939" y="376" text-anchor="middle" font-size="12.5" fill="#334155">财务核算</text>
+    <text x="939" y="392" text-anchor="middle" font-size="8.5" fill="#64748b">Finance</text>
+    <text x="1025" y="376" text-anchor="middle" font-size="12.5" fill="#334155">人力资源</text>
+    <text x="1025" y="392" text-anchor="middle" font-size="8.5" fill="#64748b">HR</text>
+    <text x="982" y="444" text-anchor="middle" font-size="12.5" fill="#334155">行政法务</text>
+    <text x="982" y="460" text-anchor="middle" font-size="8.5" fill="#64748b">Admin / Legal</text>
+    <!-- 部门小注 -->
+    <text x="134" y="548" text-anchor="middle" font-size="10" fill="#64748b">4 个小组 · 工程师 80+</text>
+    <text x="346" y="548" text-anchor="middle" font-size="10" fill="#64748b">3 个小组 · 产品经理 20+</text>
+    <text x="558" y="548" text-anchor="middle" font-size="10" fill="#64748b">3 个小组 · 市场伙伴 30+</text>
+    <text x="770" y="548" text-anchor="middle" font-size="10" fill="#64748b">3 个小组 · 运营同学 40+</text>
+    <text x="982" y="548" text-anchor="middle" font-size="10" fill="#64748b">3 个小组 · 职能伙伴 25+</text>
+    <!-- 跨部门协同标注 -->
+    <text x="876" y="414" text-anchor="middle" font-size="9.5" fill="#64748b">人事协同</text>
+    <!-- 图例 -->
+    <text x="356" y="624" font-size="13" fill="#334155">图例</text>
+    <text x="430" y="624" font-size="11" fill="#64748b">直属汇报</text>
+    <text x="516" y="624" font-size="11" fill="#64748b">部门编号 1-5</text>
+    <text x="500" y="623" text-anchor="middle" font-size="9" font-weight="700" fill="#ffffff">1</text>
+    <text x="644" y="624" font-size="11" fill="#64748b">跨部门协同</text>
+    <!-- 编号文字 -->
+    <text x="214" y="331" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">1</text>
+    <text x="426" y="331" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">2</text>
+    <text x="638" y="331" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">3</text>
+    <text x="850" y="331" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">4</text>
+    <text x="1062" y="331" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">5</text>
+    <!-- 页脚 -->
+    <text x="550" y="905" text-anchor="middle" font-size="10.5" fill="#94a3b8">画于 2025 · 马克笔手绘 · 每一张都是独一份</text>
+  </g>
+</svg>

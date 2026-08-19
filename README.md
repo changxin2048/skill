@@ -24,7 +24,7 @@
 
 下面这张就是它画出来的效果示例：
 
-![手绘风智能体架构图示例](handdrawn-svg/assets/example_agent_architecture.svg)
+![手绘风智能体架构图示例](handdrawn-svg/assets/eg2.svg)
 
 ### 怎么用
 

@@ -1,0 +1,252 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="960" viewBox="0 0 1100 960">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&amp;family=Liu+Jian+Mao+Cao&amp;display=swap');
+    .text { font-family: 'ZCOOL KuaiLe','Liu Jian Mao Cao','Kaiti SC','STKaiti','KaiTi','Comic Sans MS','Bradley Hand',cursive; }
+    .shapes { stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+  <!-- 本次随机参数：色系=马卡龙；层色=天空蓝/蜜桃/淡紫(LLM实心)/薄荷绿/柠檬黄/淡青/樱花粉；纸色=#FBF7EC 奶油；seedA=41/scaleA=3.2/baseFreqA=0.058；seedB=97/scaleB=4.2/baseFreqB=0.052；排线=30°/0.14；箭头=#DB9066 蜜橙；返回虚线="7,6" 灰#94a3b8；装饰=星+螺旋+太阳+圆点；编号语义：实心=主流程 / 空心=循环内部 / 灰=返回辅助 -->
+  <defs>
+    <filter id="sketchA" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.058" numOctaves="3" seed="41" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="sketchB" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.052" numOctaves="3" seed="97" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="4.2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <pattern id="paperDots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.2" fill="#E0D5BC" opacity="0.5"/>
+    </pattern>
+    <pattern id="hatch_blue" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#6E9ECB" stroke-width="1" opacity="0.14"/>
+    </pattern>
+    <pattern id="hatch_peach" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#DB9066" stroke-width="1" opacity="0.14"/>
+    </pattern>
+    <pattern id="hatch_mint" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#6FB39B" stroke-width="1" opacity="0.14"/>
+    </pattern>
+    <pattern id="hatch_lemon" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#D9AE4E" stroke-width="1" opacity="0.14"/>
+    </pattern>
+    <pattern id="hatch_aqua" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#6EB5B4" stroke-width="1" opacity="0.14"/>
+    </pattern>
+    <pattern id="hatch_pink" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#D9738A" stroke-width="1" opacity="0.14"/>
+    </pattern>
+  </defs>
+
+  <!-- 纸张背景 -->
+  <rect width="1100" height="960" fill="#FBF7EC"/>
+  <rect width="1100" height="960" fill="url(#paperDots)"/>
+
+  <!-- 形状组（矩形 / 小块 / 涂鸦装饰，含抖动滤镜；不含连接线） -->
+  <g filter="url(#sketchA)" class="shapes">
+    <!-- 用户层 -->
+    <rect x="200" y="90" width="720" height="94" rx="14" fill="#ECF4FB"/>
+    <rect x="200" y="90" width="720" height="94" rx="14" fill="url(#hatch_blue)"/>
+    <rect x="200" y="90" width="720" height="94" rx="14" fill="none" stroke="#A9CBE8" stroke-width="3"/>
+    <rect x="214" y="124" width="190" height="42" rx="8" fill="#fffdf7" stroke="#D2E4F3" stroke-width="2"/>
+    <rect x="460" y="124" width="210" height="42" rx="8" fill="#fffdf7" stroke="#D2E4F3" stroke-width="2"/>
+    <rect x="726" y="124" width="182" height="42" rx="8" fill="#fffdf7" stroke="#D2E4F3" stroke-width="2"/>
+    <!-- 编排层 -->
+    <rect x="200" y="216" width="720" height="148" rx="14" fill="#FEF1E8"/>
+    <rect x="200" y="216" width="720" height="148" rx="14" fill="url(#hatch_peach)"/>
+    <rect x="200" y="216" width="720" height="148" rx="14" fill="none" stroke="#F5C3A8" stroke-width="3"/>
+    <rect x="214" y="258" width="200" height="58" rx="8" fill="#fffdf7" stroke="#FAE0CE" stroke-width="2"/>
+    <rect x="480" y="258" width="200" height="58" rx="8" fill="#fffdf7" stroke="#FAE0CE" stroke-width="2"/>
+    <rect x="740" y="258" width="166" height="58" rx="8" fill="#fffdf7" stroke="#FAE0CE" stroke-width="2"/>
+    <!-- 模型层（LLM 块实心） -->
+    <rect x="200" y="396" width="720" height="106" rx="14" fill="#F4EFFA"/>
+    <rect x="200" y="396" width="720" height="106" rx="14" fill="none" stroke="#C7B4E3" stroke-width="3"/>
+    <rect x="360" y="432" width="400" height="50" rx="10" fill="#C7B4E3" stroke="#9678C0" stroke-width="2.5"/>
+    <!-- 工具层 -->
+    <rect x="200" y="534" width="720" height="110" rx="14" fill="#EBF7F2"/>
+    <rect x="200" y="534" width="720" height="110" rx="14" fill="url(#hatch_mint)"/>
+    <rect x="200" y="534" width="720" height="110" rx="14" fill="none" stroke="#A8D8C5" stroke-width="3"/>
+    <rect x="214" y="576" width="150" height="46" rx="8" fill="#fffdf7" stroke="#CEEADF" stroke-width="2"/>
+    <rect x="394" y="576" width="150" height="46" rx="8" fill="#fffdf7" stroke="#CEEADF" stroke-width="2"/>
+    <rect x="574" y="576" width="150" height="46" rx="8" fill="#fffdf7" stroke="#CEEADF" stroke-width="2"/>
+    <rect x="754" y="576" width="150" height="46" rx="8" fill="#fffdf7" stroke="#CEEADF" stroke-width="2"/>
+    <!-- 记忆层 -->
+    <rect x="200" y="676" width="720" height="90" rx="14" fill="#FEF7E4"/>
+    <rect x="200" y="676" width="720" height="90" rx="14" fill="url(#hatch_lemon)"/>
+    <rect x="200" y="676" width="720" height="90" rx="14" fill="none" stroke="#F4D58C" stroke-width="3"/>
+    <rect x="280" y="710" width="250" height="44" rx="8" fill="#fffdf7" stroke="#FAE9BE" stroke-width="2"/>
+    <rect x="600" y="710" width="280" height="44" rx="8" fill="#fffdf7" stroke="#FAE9BE" stroke-width="2"/>
+    <!-- 知识层 -->
+    <rect x="200" y="798" width="720" height="90" rx="14" fill="#ECF8F7"/>
+    <rect x="200" y="798" width="720" height="90" rx="14" fill="url(#hatch_aqua)"/>
+    <rect x="200" y="798" width="720" height="90" rx="14" fill="none" stroke="#A5DCDB" stroke-width="3"/>
+    <rect x="280" y="832" width="250" height="44" rx="8" fill="#fffdf7" stroke="#D1EEED" stroke-width="2"/>
+    <rect x="600" y="832" width="280" height="44" rx="8" fill="#fffdf7" stroke="#D1EEED" stroke-width="2"/>
+    <!-- 安全层（右侧竖带） -->
+    <rect x="1016" y="90" width="74" height="798" rx="10" fill="#FDECEF"/>
+    <rect x="1016" y="90" width="74" height="798" rx="10" fill="url(#hatch_pink)"/>
+    <rect x="1016" y="90" width="74" height="798" rx="10" fill="none" stroke="#F2A9B8" stroke-width="3"/>
+    <rect x="1024" y="160" width="58" height="46" rx="8" fill="#fffdf7" stroke="#F8CDD5" stroke-width="2"/>
+    <rect x="1024" y="380" width="58" height="46" rx="8" fill="#fffdf7" stroke="#F8CDD5" stroke-width="2"/>
+    <rect x="1024" y="600" width="58" height="46" rx="8" fill="#fffdf7" stroke="#F8CDD5" stroke-width="2"/>
+    <!-- 涂鸦装饰 -->
+    <path d="M0,-12 C1,-3 3,-1 12,0 C3,1 1,3 0,12 C-1,3 -3,1 -12,0 C-3,-1 -1,-3 0,-12 Z" transform="translate(70,58) scale(1.2)" fill="#f472b6" opacity="0.85"/>
+    <circle cx="58" cy="100" r="5" fill="#a78bfa" opacity="0.7"/>
+    <path d="M62,918 m0,0 c3.6,-5.4 10.8,-3.6 11.7,1.8 c0.9,5.4 -5.4,8.1 -9.9,4.5 c-3.6,-2.7 -3.6,-8.1 0.9,-9.9 c3.6,-1.8 7.2,0.9 6.3,4.5" fill="none" stroke="#22d3ee" stroke-width="2"/>
+    <g transform="translate(1050,915)">
+      <circle r="7" fill="#fbbf24"/>
+      <path d="M0,-11 L0,-8 M0,11 L0,8 M-11,0 L-8,0 M11,0 L8,0 M-8,-8 L-6,-6 M8,8 L6,6 M8,-8 L6,-6 M-8,8 L-6,6" stroke="#fbbf24" stroke-width="1.8" fill="none"/>
+    </g>
+  </g>
+
+  <!-- 描边组（大容器第二遍描边，与第一遍错开形成叠线） -->
+  <g filter="url(#sketchB)" class="shapes">
+    <rect x="200" y="90" width="720" height="94" rx="14" fill="none" stroke="#A9CBE8" stroke-width="1.6"/>
+    <rect x="200" y="216" width="720" height="148" rx="14" fill="none" stroke="#F5C3A8" stroke-width="1.6"/>
+    <rect x="200" y="396" width="720" height="106" rx="14" fill="none" stroke="#C7B4E3" stroke-width="1.6"/>
+    <rect x="200" y="534" width="720" height="110" rx="14" fill="none" stroke="#A8D8C5" stroke-width="1.6"/>
+    <rect x="200" y="676" width="720" height="90" rx="14" fill="none" stroke="#F4D58C" stroke-width="1.6"/>
+    <rect x="200" y="798" width="720" height="90" rx="14" fill="none" stroke="#A5DCDB" stroke-width="1.6"/>
+    <rect x="1016" y="90" width="74" height="798" rx="10" fill="none" stroke="#F2A9B8" stroke-width="1.6"/>
+  </g>
+
+  <!-- 连接线组（不使用任何滤镜；主流程实线 / 返回与辅助虚线；弯折处圆角） -->
+  <g class="shapes">
+    <!-- ① 用户请求 -->
+    <path d="M235,164 L235,188 M235,212 L235,254" fill="none" stroke="#DB9066" stroke-width="2.2"/>
+    <path d="M229,246 L241,248 L235,258 Z" fill="#DB9066"/>
+    <!-- ② 推理请求 -->
+    <path d="M520,314 L520,368 M520,392 L520,418" fill="none" stroke="#DB9066" stroke-width="2.2"/>
+    <path d="M514,420 L526,422 L520,432 Z" fill="#DB9066"/>
+    <!-- ③ 工具调用 -->
+    <path d="M898,279 L948,279 Q952,279 952,283 L952,467 M952,493 L952,580 Q952,584 948,584 L906,584" fill="none" stroke="#DB9066" stroke-width="2.2"/>
+    <path d="M912,577 L912,591 L904,584 Z" fill="#DB9066"/>
+    <!-- ④ 知识检索（双向） -->
+    <path d="M198,288 L92,288 Q88,288 88,292 L88,542 M88,568 L88,844 Q88,848 92,848 L276,848" fill="none" stroke="#DB9066" stroke-width="2.2"/>
+    <path d="M192,281 L192,295 L200,288 Z" fill="#DB9066"/>
+    <path d="M288,841 L288,855 L280,848 Z" fill="#DB9066"/>
+    <!-- ⑤ 记忆读写（双向） -->
+    <path d="M198,340 L104,340 Q100,340 100,344 L100,507 M100,533 L100,728 Q100,732 104,732 L276,732" fill="none" stroke="#DB9066" stroke-width="2.2"/>
+    <path d="M192,333 L192,347 L200,340 Z" fill="#DB9066"/>
+    <path d="M288,725 L288,739 L280,732 Z" fill="#DB9066"/>
+    <!-- ReAct 循环：思考 / 行动（空心编号） -->
+    <path d="M412,287 L474,287" fill="none" stroke="#DB9066" stroke-width="2.2"/>
+    <path d="M472,280 L472,294 L480,287 Z" fill="#DB9066"/>
+    <path d="M682,287 L733,287" fill="none" stroke="#DB9066" stroke-width="2.2"/>
+    <path d="M732,280 L732,294 L740,287 Z" fill="#DB9066"/>
+    <!-- 观察反馈弧线（虚线，返回 ③） -->
+    <path d="M778,256 C778,244 252,244 252,253" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="6,5"/>
+    <path d="M244,246 L258,247 L251,258 Z" fill="#94a3b8"/>
+    <!-- ⑥ 生成结果（返回） -->
+    <path d="M620,434 L620,392 M620,368 L620,326" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="7,6"/>
+    <path d="M613,328 L627,327 L620,316 Z" fill="#94a3b8"/>
+    <!-- ⑦ 工具结果（返回） -->
+    <path d="M830,580 L830,567 Q830,563 834,563 L971,563 Q975,563 975,559 L975,407 M975,433 L975,295 Q975,291 971,291 L908,291" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="7,6"/>
+    <path d="M914,284 L914,298 L906,291 Z" fill="#94a3b8"/>
+    <!-- ⑧ 最终回复（返回） -->
+    <path d="M480,216 L480,188 M480,212 L480,170" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="7,6"/>
+    <path d="M474,178 L486,176 L480,166 Z" fill="#94a3b8"/>
+    <!-- 安全层跨层防护（虚线，无编号） -->
+    <path d="M1016,183 L924,183" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="7,6"/>
+    <path d="M928,176 L928,190 L920,183 Z" fill="#94a3b8"/>
+    <path d="M1016,403 L924,403" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="7,6"/>
+    <path d="M928,396 L928,410 L920,403 Z" fill="#94a3b8"/>
+    <path d="M1016,623 L924,623" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="7,6"/>
+    <path d="M928,616 L928,630 L920,623 Z" fill="#94a3b8"/>
+    <!-- 编号圆圈：实心=主流程 / 空心=循环内部 / 灰=返回辅助 -->
+    <circle cx="235" cy="200" r="11" fill="#DB9066" stroke="#C07B48" stroke-width="1.6"/>
+    <text x="235" y="204" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">1</text>
+    <circle cx="520" cy="380" r="11" fill="#DB9066" stroke="#C07B48" stroke-width="1.6"/>
+    <text x="520" y="384" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">2</text>
+    <circle cx="952" cy="480" r="11" fill="#DB9066" stroke="#C07B48" stroke-width="1.6"/>
+    <text x="952" y="484" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">3</text>
+    <circle cx="88" cy="555" r="11" fill="#DB9066" stroke="#C07B48" stroke-width="1.6"/>
+    <text x="88" y="559" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">4</text>
+    <circle cx="100" cy="520" r="11" fill="#DB9066" stroke="#C07B48" stroke-width="1.6"/>
+    <text x="100" y="524" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">5</text>
+    <circle cx="620" cy="380" r="11" fill="#94a3b8" stroke="#64748b" stroke-width="1.6"/>
+    <text x="620" y="384" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">6</text>
+    <circle cx="975" cy="420" r="11" fill="#94a3b8" stroke="#64748b" stroke-width="1.6"/>
+    <text x="975" y="424" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">7</text>
+    <circle cx="480" cy="200" r="11" fill="#94a3b8" stroke="#64748b" stroke-width="1.6"/>
+    <text x="480" y="204" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">8</text>
+    <circle cx="385" cy="272" r="10" fill="none" stroke="#DB9066" stroke-width="2"/>
+    <text x="385" y="276" text-anchor="middle" font-size="11" font-weight="700" fill="#C07B48">1</text>
+    <circle cx="655" cy="272" r="10" fill="none" stroke="#DB9066" stroke-width="2"/>
+    <text x="655" y="276" text-anchor="middle" font-size="11" font-weight="700" fill="#C07B48">2</text>
+    <circle cx="620" cy="228" r="8" fill="none" stroke="#DB9066" stroke-width="2"/>
+    <text x="620" y="232" text-anchor="middle" font-size="10" font-weight="700" fill="#C07B48">3</text>
+    <!-- 编号图例（右上角） -->
+    <circle cx="966" cy="36" r="8" fill="#DB9066" stroke="#C07B48" stroke-width="1.4"/>
+    <circle cx="966" cy="54" r="8" fill="none" stroke="#DB9066" stroke-width="1.8"/>
+    <circle cx="966" cy="72" r="8" fill="#94a3b8" stroke="#64748b" stroke-width="1.4"/>
+  </g>
+
+  <!-- 文字组（无滤镜） -->
+  <g class="text">
+    <text x="550" y="48" text-anchor="middle" font-size="30" fill="#1f2937">主流智能体架构范式</text>
+    <text x="550" y="72" text-anchor="middle" font-size="14" fill="#64748b" opacity="0.75">Mainstream Agent Architecture</text>
+    <path d="M360,86 C400,79 440,93 480,86 C520,79 560,93 600,86 C640,79 680,93 720,86" fill="none" stroke="#DB9066" stroke-width="2.5"/>
+    <text x="980" y="40" font-size="11" fill="#475569">主流程</text>
+    <text x="980" y="58" font-size="11" fill="#475569">循环 / 内部</text>
+    <text x="980" y="76" font-size="11" fill="#475569">返回 / 辅助</text>
+    <text x="218" y="116" font-size="15.5" fill="#6E9ECB">用户层 User Layer</text>
+    <text x="309" y="143" font-size="12.5" fill="#334155">用户请求</text>
+    <text x="309" y="159" font-size="10.5" fill="#64748b" opacity="0.75">User Request</text>
+    <text x="565" y="143" font-size="12.5" fill="#334155">对话界面</text>
+    <text x="565" y="159" font-size="10.5" fill="#64748b" opacity="0.75">Chat UI</text>
+    <text x="816" y="143" font-size="12.5" fill="#334155">应用入口</text>
+    <text x="816" y="159" font-size="10.5" fill="#64748b" opacity="0.75">App · API</text>
+    <text x="218" y="242" font-size="15.5" fill="#DB9066">编排层 Orchestration</text>
+    <text x="314" y="284" font-size="12.5" fill="#334155">任务规划</text>
+    <text x="314" y="302" font-size="10.5" fill="#64748b" opacity="0.75">Plan</text>
+    <text x="580" y="284" font-size="12.5" fill="#334155">推理与决策</text>
+    <text x="580" y="302" font-size="10.5" fill="#64748b" opacity="0.75">Reason</text>
+    <text x="823" y="284" font-size="12.5" fill="#334155">行动执行</text>
+    <text x="823" y="302" font-size="10.5" fill="#64748b" opacity="0.75">Act</text>
+    <text x="218" y="422" font-size="15.5" fill="#9678C0">模型层 Model</text>
+    <text x="560" y="446" text-anchor="middle" font-size="15" fill="#ffffff">大语言模型 LLM</text>
+    <text x="560" y="467" text-anchor="middle" font-size="11" fill="#ffffff" opacity="0.85">推理 · 生成 · 上下文理解</text>
+    <text x="218" y="560" font-size="15.5" fill="#6FB39B">工具层 Tool Layer</text>
+    <text x="289" y="595" font-size="12.5" fill="#334155">函数调用</text>
+    <text x="289" y="611" font-size="10.5" fill="#64748b" opacity="0.75">Function Call</text>
+    <text x="469" y="595" font-size="12.5" fill="#334155">代码执行</text>
+    <text x="469" y="611" font-size="10.5" fill="#64748b" opacity="0.75">Code Runner</text>
+    <text x="649" y="595" font-size="12.5" fill="#334155">网页检索</text>
+    <text x="649" y="611" font-size="10.5" fill="#64748b" opacity="0.75">Web Search</text>
+    <text x="829" y="595" font-size="12.5" fill="#334155">外部API</text>
+    <text x="829" y="611" font-size="10.5" fill="#64748b" opacity="0.75">External API</text>
+    <text x="218" y="702" font-size="15.5" fill="#D9AE4E">记忆层 Memory</text>
+    <text x="405" y="728" font-size="12.5" fill="#334155">短期记忆 · 上下文</text>
+    <text x="405" y="744" font-size="10.5" fill="#64748b" opacity="0.75">Short-term</text>
+    <text x="740" y="728" font-size="12.5" fill="#334155">长期记忆 · 向量存储</text>
+    <text x="740" y="744" font-size="10.5" fill="#64748b" opacity="0.75">Long-term</text>
+    <text x="218" y="824" font-size="15.5" fill="#6EB5B4">知识层 Knowledge</text>
+    <text x="405" y="850" font-size="12.5" fill="#334155">知识库 · 文档</text>
+    <text x="405" y="866" font-size="10.5" fill="#64748b" opacity="0.75">KB &amp; Docs</text>
+    <text x="740" y="850" font-size="12.5" fill="#334155">向量检索 · RAG</text>
+    <text x="740" y="866" font-size="10.5" fill="#64748b" opacity="0.75">Vector RAG</text>
+    <text x="1053" y="116" text-anchor="middle" font-size="15.5" fill="#D9738A">安全层</text>
+    <text x="1053" y="132" text-anchor="middle" font-size="9.5" fill="#64748b">Safety</text>
+    <text x="1053" y="179" text-anchor="middle" font-size="12" fill="#334155">权限控制</text>
+    <text x="1053" y="195" text-anchor="middle" font-size="9" fill="#64748b">Access</text>
+    <text x="1053" y="399" text-anchor="middle" font-size="12" fill="#334155">安全护栏</text>
+    <text x="1053" y="415" text-anchor="middle" font-size="9" fill="#64748b">Guardrails</text>
+    <text x="1053" y="619" text-anchor="middle" font-size="12" fill="#334155">审计监控</text>
+    <text x="1053" y="635" text-anchor="middle" font-size="9" fill="#64748b">Audit</text>
+    <!-- 编号标注 -->
+    <text x="250" y="204" font-size="12.5" fill="#DB9066">1 用户请求</text>
+    <text x="535" y="384" font-size="12.5" fill="#DB9066">2 推理请求</text>
+    <text x="935" y="484" text-anchor="end" font-size="12.5" fill="#DB9066">3 工具调用</text>
+    <text x="104" y="559" font-size="12.5" fill="#DB9066">4 知识检索</text>
+    <text x="116" y="524" font-size="12.5" fill="#DB9066">5 记忆读写</text>
+    <text x="635" y="384" font-size="12.5" fill="#64748b">6 生成结果</text>
+    <text x="958" y="424" text-anchor="end" font-size="12.5" fill="#64748b">7 工具结果</text>
+    <text x="495" y="204" font-size="12.5" fill="#64748b">8 最终回复</text>
+    <text x="400" y="276" font-size="11.5" fill="#C07B48">1 思考</text>
+    <text x="672" y="276" font-size="11.5" fill="#C07B48">2 行动</text>
+    <text x="634" y="230" font-size="11.5" fill="#C07B48">3 观察</text>
+    <text x="948" y="390" text-anchor="end" font-size="11" fill="#64748b">跨层防护</text>
+    <text x="550" y="905" text-anchor="middle" font-size="13" fill="#64748b">范式要点：规划 — 执行 — 反思循环 ｜ 工具 / 记忆 / 知识增强 ｜ 安全贯穿全链路</text>
+    <path d="M360,918 C400,911 440,925 480,918 C520,911 560,925 600,918 C640,911 680,925 720,918" fill="none" stroke="#DB9066" stroke-width="2"/>
+  </g>
+</svg>
